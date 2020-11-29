@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .type1 {
+            width: calc(100% / 3);
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px red solid;
+            padding: 20px;
+        }
+
+        .container {
+            border-left: 2px black solid;
+            border-right: 2px black solid;
+            padding: 16px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <span class="type1">33.3%</span>
+    <span class="type1">33.3%</span>
+    <span class="type1">33.3%</span>
+</div>
+
+<div class="container">
+    <span class="type1">33.3%</span><span class="type1">33.3%</span><span class="type1">33.3%</span>
+</div>
+
+<div class="container">
+    <span class="type1">33.3%</span><!--
+    --><span class="type1">33.3%</span><!--
+    --><span class="type1">33.3%</span>
+</div>
+</body>
+</html>

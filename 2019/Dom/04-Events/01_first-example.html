@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btnClickMe">click me</button>
+<div id="container"></div>
+
+<script>
+    const btn = document.querySelector("#btnClickMe");
+    const container = document.querySelector("#container");
+    const eventHandler = () => {
+        container.appendChild(document.createTextNode("Hello World"));
+    };
+    btn.addEventListener("click", eventHandler);
+</script>
+</body>
+</html>

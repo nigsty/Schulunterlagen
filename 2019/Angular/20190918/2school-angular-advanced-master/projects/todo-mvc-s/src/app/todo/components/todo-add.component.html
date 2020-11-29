@@ -1,0 +1,28 @@
+<form novalidate (submit)="onAdd(description.value)">
+    <mat-card class="add-item">
+        <mat-card-header>
+            <mat-card-title>Add a new Item</mat-card-title>
+        </mat-card-header>
+        <mat-form-field>
+            <input matInput placeholder="Todo Beschreibung" #description
+                required minlength="4" appForbiddenMatInput=number
+                (ngModel)]="hero.inputCheck" #name="ngModel" >
+                <div *ngIf="inputCheck.invalid && (inputCheck.dirty || inputCheck.touched)"
+                    class="alert alert-danger">
+
+                    <div *ngIf="inputCheck.errors.required">
+                        Input required.
+                    </div>
+                    <div *ngIf="name.errors.minlength">
+                        Input must be at least 4 characters long.
+                    </div>
+                    <div *ngIf="name.errors.forbiddenName">
+                        Input cannot be a number.
+                    </div>
+
+                </div>
+
+        </mat-form-field>
+        <button type="submit" mat-button>Add</button>
+    </mat-card>
+</form>

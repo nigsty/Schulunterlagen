@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bubbling Events</title>
+</head>
+<body>
+
+<h1>Songs</h1>
+
+<ul id="songs"></ul>
+<script src="songmodel.js"></script>
+    <!-- TODO add + and - button each with an attribute data-songId containing the songId and a data-delta -->
+                
+<script>
+    function createSongsHtml(songs) {
+        return songs.map(song =>`
+            <li>
+               
+                <h3>
+                    <button>+</button>
+                    <button>-</button>
+                    ${song.rating}
+                    ${song.title}
+                </h3>
+                <p>${song.artist}</p>
+            </li>`).join('');
+    }
+
+
+    function bubbledClickEventHandler(event) {
+        // takes advantage of event bubbling
+        // TODO
+        // - get the button as the click-target from the event
+        // - get the value af the data-songId / data-delta attribute from the button
+        // - based on data-* call the rate() with the right parameters
+        // - check if the click was fired on a button
+    }
+
+    function rate(id, delta) {
+        rateSong(id, delta);
+        renderSongs();
+    }
+
+    function renderSongs() {
+        document.getElementById("songs").innerHTML = createSongsHtml(songs.sort(compareSongs));
+    }
+
+    function init() {
+        renderSongs();
+        // TODO register bubbledClickEventHandler with an element that receives all bubbled click events from the buttons
+    }
+
+    init();
+</script>
+</body>
+</html>

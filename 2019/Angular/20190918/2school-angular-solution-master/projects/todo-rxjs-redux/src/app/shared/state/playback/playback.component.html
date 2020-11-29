@@ -1,0 +1,5 @@
+<mat-card>
+    <button mat-button [disabled]="!hasPrevious" (click)="onPrevious()">prev</button>
+    <span>{{stateIndex}}</span>
+    <button mat-button [disabled]="!hasNext" (click)="onNext()">forward</button>
+</mat-card>

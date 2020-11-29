@@ -1,0 +1,1 @@
+var fn=function(){console.log("test")};fn(),console.log("test2"),console.log("test2");

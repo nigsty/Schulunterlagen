@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="value-content" class="info-class" required/>
+<script>
+    const input = document.querySelector("input");
+    console.log(input.type, input.value, input.className);
+
+    input.value = "1234";
+    input.setAttribute("value", "Hello World")
+</script>
+
+</body>
+</html>

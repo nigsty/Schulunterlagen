@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <ul class="nav">
+        <li class="nav-item">nav1</li>
+        <li class="nav-item">nav2</li>
+        <li class="nav-item">nav3</li>
+    </ul>
+</nav>
+<main>
+    <p>Anzahl Einträge: 3</p>
+    <button id="addButton">Hinzufügen</button>
+
+    <ul id="list-container">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+</main>
+<script>
+    const listContainer = document.querySelector('#list-container');
+    console.log(listContainer);
+
+    const lis = document.querySelectorAll('li');
+    console.log(lis);
+
+    const navItems = document.querySelectorAll('.nav-item');
+    console.log(navItems);
+
+    const nav = document.querySelector('.nav');
+    console.log(nav);
+
+    const listContainerItems = document.querySelectorAll('#list-container li');
+    console.log(listContainerItems);
+</script>
+</body>
+</html>

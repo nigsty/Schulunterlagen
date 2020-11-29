@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Inline Events</title>
+</head>
+<body>
+
+<h1>Songs</h1>
+
+<ul id="songs"></ul>
+
+<script src="songmodel.js"></script>
+<script>
+  function createSongsHtml(songs) {
+    return songs.map(song =>
+        `<li>
+            <h3>${song.rating}
+                <button onclick="rate('${song.id}', 1)">+</button>
+                <button onclick="rate('${song.id}', -1)">-</button>
+                ${song.title}
+            </h3>
+          <p>${song.artist}</p>
+        </li>`).join('');
+  }
+
+  function rate(id, delta)
+  {
+      rateSong(id, delta);
+      renderSongs();
+  }
+
+  function renderSongs() {
+      document.getElementById("songs").innerHTML = createSongsHtml(songsSorted());
+  }
+
+  function init(){
+      renderSongs();
+  }
+  init();
+</script>
+</body>
+</html>

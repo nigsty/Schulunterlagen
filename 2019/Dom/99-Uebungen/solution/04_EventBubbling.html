@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bubbling Events</title>
+</head>
+<body>
+
+<h1>Songs</h1>
+
+<ul id="songs"></ul>
+
+
+<script src="songmodel.js"></script>
+
+<script>
+    function createSongsHtml(songs) {
+        return songs.map(song =>
+            `<li>
+                <h3>${song.rating}
+                    <button data-delta="1" data-song-id="${song.id}">+</button>
+                    <button data-delta="-1" data-song-id="${song.id}">-</button>
+                    ${song.title}
+                </h3>
+                <p>${song.artist}</p>
+            </li>`).join('');
+    }
+
+    function bubbledClickEventHandler(event) {
+        // takes advantage of event bubbling
+        const buttonSongId = event.target.dataset.songId;
+        if (buttonSongId) {
+            const buttonDelta = Number(event.target.dataset.delta);
+            rate(buttonSongId, buttonDelta);
+        }
+    }
+
+    function rate(id, delta) {
+        rateSong(id, delta);
+        renderSongs();
+    }
+
+    function renderSongs() {
+        document.getElementById("songs").innerHTML = createSongsHtml(songsSorted());
+    }
+
+    function init() {
+        renderSongs();
+        document.getElementById("songs").addEventListener("click", bubbledClickEventHandler);
+    }
+    init();
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <ul class="nav">
+        <li class="nav-item">nav1</li>
+        <li class="nav-item">nav2</li>
+        <li class="nav-item">nav3</li>
+    </ul>
+</nav>
+<main>
+    <p>Anzahl Einträge: 3</p>
+    <button id="addButton">Hinzufügen</button>
+
+    <ul id="list-container">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+</main>
+<script>
+
+
+    const navItems = document.getElementsByClassName('nav-item');
+    console.log(Array.isArray(navItems));
+
+    console.log(navItems);
+
+    for (let i = 0; i < navItems.length; i++) {
+        console.log("for", navItems[i]);
+    }
+
+    for (const item of Array.from(navItems)) {
+        console.log("array.from", item);
+    }
+
+    for (const item of navItems) {
+        console.log("for of", item);
+    }
+
+    Array.from(navItems)
+        .filter((el, i) => i % 2 === 0)
+        .forEach(el => el.style = "background: green");
+
+</script>
+</body>
+</html>
